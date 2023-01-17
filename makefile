@@ -1,15 +1,15 @@
 CC = gcc
 AR = ar
 FLAGS = -Wall -g 
-OBJECTS = main.o nodes_funcs.o algorithms.o
+OBJECTS = main.o nodes.o algo.o
 
-algorithms.o: algorithms.c algorithms.h nodes_headers.h
-	$(CC) $(FLAGS) -c algorithms.c
+algo.o: algo.c algo.h nodes.h
+	$(CC) $(FLAGS) -c algo.c
 
-nodes_funcs.o: nodes_funcs.c nodes_headers.h 
-	$(CC) $(FLAGS) -c nodes_funcs.c
+nodes_funcs.o: nodes.c nodes.h 
+	$(CC) $(FLAGS) -c nodes.c
 
-main.o: main.c algorithms.h 
+main.o: main.c algo.h 
 	$(CC) $(FLAGS) -c main.c
 
 graph: $(OBJECTS) 

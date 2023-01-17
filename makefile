@@ -6,7 +6,7 @@ OBJECTS = main.o nodes.o algo.o
 algo.o: algo.c algo.h nodes.h
 	$(CC) $(FLAGS) -c algo.c
 
-nodes_funcs.o: nodes.c nodes.h 
+nodes.o: nodes.c nodes.h 
 	$(CC) $(FLAGS) -c nodes.c
 
 main.o: main.c algo.h 

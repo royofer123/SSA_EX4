@@ -18,4 +18,4 @@ edge.o: edge.c
 
 PHONY: all clean
 clean:
-	rm -f *.a *.o
+	rm -f *.a *.o graph

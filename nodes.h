@@ -1,24 +1,21 @@
-#ifndef NODES_HEADERS
-#define NODES_HEADERS
+#ifndef FLAG1
+#define FLAG1
 
-typedef struct GRAPH_NODE_ *pnode;;
 
-typedef struct edge_ {
-    int weight;
-    pnode endpoint;
-    struct edge_ *next;
-} edge, *pedge;
+#include"edge.h"
+#include"main.h"
 
-typedef struct GRAPH_NODE_ {
-    int node_num;
-    pedge edges;
-    struct GRAPH_NODE_ *next;
-    int pathWeight;
-    int isInTheQueue;
-} node, *pnode;
+typedef struct node
+{
+int id;
+struct node* nextNode;
+edge* nextEdge;
+struct node* prev;
+int length;
 
-pnode getNode(pnode *head, int id);
-void create_edges_of_node(pnode *node);
-void set_edges(pnode *head, pnode new_node, int isOldNode);
+}node;
+
+node* nodeAllloc(int id1,node* pnode);
+
 
 #endif
